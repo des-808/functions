@@ -40,7 +40,7 @@ void Sort(int arr[], int size);
 int compare(int arr[], const int size, int compared_value);
 
 int main() {
-	setlocale(LC_ALL, "Russian");
+	setlocale(LC_ALL, "Russian"); 
 
 
 	const int SIZE = 30;
