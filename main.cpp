@@ -107,18 +107,18 @@ int compare(short arr[], const int size, short compared_value);
 int main() {
 	setlocale(LC_ALL, "Russian"); 
 	const int SIZE = 10;
-	//int* array = new  int[SIZE];
+	int* array = new  int[SIZE];
 	//double* array = new double[SIZE];
 	//float* array = new float[SIZE];
 	//char* array = new char[SIZE];
 	//long long int* array = new long long int[SIZE];
-	short* array = new short[SIZE];
+	//short* array = new short[SIZE];
 
 	//int array [SIZE];
 	int tmp = 0;
-	//srand(time(NULL));
-	initRand(array, SIZE, 127);
-	//UniqueRand(array, SIZE, 10);
+	srand(time(NULL));
+	//initRand(array, SIZE, 10);
+	UniqueRand(array, SIZE, 10);
 	
 	cout << "В прямом порядке   :";
 	for (int i = 0; i < SIZE; i++) { cout << array[i] << probel; }cout << endl << endl;
