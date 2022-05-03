@@ -41,8 +41,6 @@ int compare(int arr[], const int size, int compared_value);
 
 int main() {
 	setlocale(LC_ALL, "Russian"); 
-
-
 	const int SIZE = 30;
 	int* array = new int[SIZE];
 	//int array [SIZE];
