@@ -28,52 +28,78 @@ const char probel = ' ';
 void initRand(int arr[], const int size, int  max);
 void initRand(double arr[], const int size, int  max);
 void initRand(float arr[], const int size, int  max);
+void initRand(char arr[], const int size, int  max);
+void initRand(long long int arr[], const int size, int  max);
 void UniqueRand(int arr[], const int size, int  max);
 void UniqueRand(double arr[], const int size, int  max);
 void UniqueRand(float arr[], const int size, int  max);
+void UniqueRand(char arr[], const int size, int  max);
+void UniqueRand(long long int arr[], const int size, int  max);
 int Sum(int arr[], int size);
 double Sum(double arr[], int size);
 float Sum(float arr[], int size);
+char Sum(char arr[], int size);
+long long int Sum(long long int arr[], int size);
 int CountNonZeroElements(int arr[], const int size);
 int CountNonZeroElements(double arr[], const int size);
 int CountNonZeroElements(float arr[], const int size);
+int CountNonZeroElements(char arr[], const int size);
+int CountNonZeroElements(long long int arr[], const int size);
 double Avg(int arr[], int size);
 double Avg(double arr[], int size);
-float Avg(float arr[], int size);
+double Avg(float arr[], int size);
+double Avg(char arr[], int size);
+double Avg(long long int arr[], int size);
 double Avg_no_zero(int arr[], int size);
 double Avg_no_zero(double arr[], int size);
-float Avg_no_zero(float arr[], int size);
+double Avg_no_zero(float arr[], int size);
+double Avg_no_zero(char arr[], int size);
+double Avg_no_zero(long long int arr[], int size);
 int minValueIn(int arr[], int size);
 double minValueIn(double arr[], int size);
 float minValueIn(float arr[], int size);
+char minValueIn(char arr[], int size);
+long long int minValueIn(long long int arr[], int size);
 int maxValueIn(int arr[], int size);
 double maxValueIn(double arr[], int size);
 float maxValueIn(float arr[], int size);
+char maxValueIn(char arr[], int size);
+long long int maxValueIn(long long int arr[], int size);
 void cout_arr(int arr[], int size, char ch);
 void cout_arr(double arr[], int size, char ch);
 void cout_arr(float arr[], int size, char ch);
+void cout_arr(char arr[], int size, char ch);
+void cout_arr(long long int arr[], int size, char ch);
 void Cikl_Left(int arr[], int size, int L);
 void Cikl_Left(double arr[], int size, int L);
 void Cikl_Left(float arr[], int size, int L);
+void Cikl_Left(char arr[], int size, int L);
+void Cikl_Left(long long int arr[], int size, int L);
 void Cikl_Right(int arr[], int size, int R);
 void Cikl_Right(double arr[], int size, int R);
 void Cikl_Right(float arr[], int size, int R);
+void Cikl_Right(char arr[], int size, int R);
+void Cikl_Right(long long int arr[], int size, int R);
 void Sort(int arr[], int size);
 void Sort(double arr[], int size);
 void Sort(float arr[], int size);
+void Sort(char arr[], int size);
+void Sort(long long int arr[], int size);
 int compare(int arr[], const int size, int compared_value);
 int compare(double arr[], const int size, double compared_value);
 int compare(float arr[], const int size, float compared_value);
+int compare(char arr[], const int size, char compared_value);
+int compare(long long int arr[], const int size, long long int compared_value);
 
 int main() {
 	setlocale(LC_ALL, "Russian"); 
 	const int SIZE = 10;
-	float* array = new float[SIZE];
+	long long int* array = new long long int[SIZE];
 
 	//int array [SIZE];
 	int tmp = 0;
 	//srand(time(NULL));
-	initRand(array, SIZE, 10);
+	initRand(array, SIZE, 127);
 	//UniqueRand(array, SIZE, 10);
 	
 	cout << "В прямом порядке   :";
@@ -91,11 +117,11 @@ int main() {
 	cout << "Максимальное значение массива :" << maxValueIn(array, SIZE) << endl;
 	cout << endl;
 	///////////////////////////////////
-	//cout << "Циклический сдвиг массива в лево.\nВведите число на сколько сдвинуть :"; cin >> tmp;
-	//Cikl_Left(array, SIZE, tmp); cout_arr(array, SIZE, probel); cout << endl << endl;//Вывод массива на экран
+	cout << "Циклический сдвиг массива в лево.\nВведите число на сколько сдвинуть :"; cin >> tmp;
+	Cikl_Left(array, SIZE, tmp); cout_arr(array, SIZE, probel); cout << endl << endl;//Вывод массива на экран
 	///////////////////////////////////
-	//cout << "Циклический сдвиг массива в право.\nВведите число на сколько сдвинуть :"; cin >> tmp;
-	//Cikl_Right(array, SIZE, tmp); cout_arr(array, SIZE, probel); cout << endl << endl;//Вывод массива на экран
+	cout << "Циклический сдвиг массива в право.\nВведите число на сколько сдвинуть :"; cin >> tmp;
+	Cikl_Right(array, SIZE, tmp); cout_arr(array, SIZE, probel); cout << endl << endl;//Вывод массива на экран
 	///////////////////////////////////
 	cout << "Массив, заполненный случайными числами, отсортировать в порядке возрастания" << endl;
 	Sort(array, SIZE); cout_arr(array, SIZE, probel); cout << endl << endl;//Вывод массива на экран
@@ -135,7 +161,8 @@ int main() {
 
 
 void initRand(int arr[], const int size,  int  max) {
-	for (int i = 0; i < size; i++) { arr[i] = rand() % max; }
+	for (int i = 0; i < size; i++) { 
+		arr[i] = rand() % max; }
 }
 void initRand(double arr[], const int size, int  max) {
 	for (int i = 0; i < size; i++) { 
@@ -145,6 +172,16 @@ void initRand(double arr[], const int size, int  max) {
 void initRand(float arr[], const int size, int  max) {
 	for (int i = 0; i < size; i++) {
 		arr[i] = ((rand() % max) * 100.5) / 10;
+	}
+}
+void initRand(char arr[], const int size, int  max) {
+	for (int i = 0; i < size; i++) {
+		arr[i] = rand() % max;
+	}
+}
+void initRand(long long int arr[], const int size, int  max) {
+	for (int i = 0; i < size; i++) {
+		arr[i] = rand() % max;
 	}
 }
 void UniqueRand(int arr[], const int size, int  max){
@@ -174,6 +211,24 @@ void UniqueRand(float arr[], const int size, int  max) {
 		arr[i] = tmp;
 	}
 }
+void UniqueRand(char arr[], const int size, int  max) {
+	char tmp = rand() % max;//rand() % max;
+	for (int i = 0; i < size; i++) {
+		for (int j = i; j >= 0; j--) {
+			if (tmp == arr[j]) { tmp = rand() % max; j = i; }
+		}
+		arr[i] = tmp;
+	}
+}
+void UniqueRand(long long int arr[], const int size, int  max) {
+	long long int tmp = rand() % max;//rand() % max;
+	for (int i = 0; i < size; i++) {
+		for (int j = i; j >= 0; j--) {
+			if (tmp == arr[j]) { tmp = rand() % max; j = i; }
+		}
+		arr[i] = tmp;
+	}
+}
 
 int Sum(int arr[], int size) {	//возвращает сумму элементов массива
 	double tmp = 0;
@@ -191,6 +246,20 @@ double Sum(double arr[], int size) {	//возвращает сумму элем�
 }
 float Sum(float arr[], int size) {	//возвращает сумму элементов массива
 	float tmp = 0;
+	for (int i = 0; i < size; i++) {
+		tmp += arr[i];
+	}
+	return tmp;
+}
+char Sum(char arr[], int size) {	//возвращает сумму элементов массива
+	char tmp = 0;
+	for (int i = 0; i < size; i++) {
+		tmp += arr[i];
+	}
+	return tmp;
+}
+long long int Sum(long long int arr[], int size) {	//возвращает сумму элементов массива
+	long long int tmp = 0;
 	for (int i = 0; i < size; i++) {
 		tmp += arr[i];
 	}
@@ -224,14 +293,38 @@ int CountNonZeroElements(float arr[], const int size)
 	}
 	return count;
 }
+int CountNonZeroElements(char arr[], const int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] != 0)count++;
+	}
+	return count;
+}
+int CountNonZeroElements(long long int arr[], const int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] != 0)count++;
+	}
+	return count;
+}
 double Avg(int arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / size;
 }
 double Avg(double arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / size;
 }
-float Avg(float arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (float)Sum(arr, size) / size;
+double Avg(float arr[], int size) {	//возвращает среднее арифметическое элементов массива
+	return (double)Sum(arr, size) / size;
+}
+double Avg(char arr[], int size) {	//возвращает среднее арифметическое элементов массива
+	return (double)Sum(arr, size) / size;
+}
+double Avg(long long int arr[], int size) {	//возвращает среднее арифметическое элементов массива
+	return (double)Sum(arr, size) / size;
 }
 double Avg_no_zero(int arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
@@ -240,9 +333,17 @@ double Avg_no_zero(int arr[], int size) {	//возвращает среднее 
 double Avg_no_zero(double arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
 }
-float Avg_no_zero(float arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (float)Sum(arr, size) / CountNonZeroElements(arr, size);
+double Avg_no_zero(float arr[], int size) {	//возвращает среднее арифметическое элементов массива
+	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
 }
+double Avg_no_zero(char arr[], int size) {	//возвращает среднее арифметическое элементов массива
+	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
+}
+double Avg_no_zero(long long int arr[], int size) {	//возвращает среднее арифметическое элементов массива
+	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
+}
+
+
 
 int minValueIn(int arr[], int size) {	//возвращает минимальное значение из массива
 	int tmp_min = arr[0];
@@ -260,6 +361,20 @@ double minValueIn(double arr[], int size) {	//возвращает минима�
 }
 float minValueIn(float arr[], int size) {	//возвращает минимальное значение из массива
 	float tmp_min = arr[0];
+	for (int i = 0; i < size; i++) {
+		if (tmp_min > arr[i])tmp_min = arr[i];
+	}
+	return tmp_min;
+}
+char minValueIn(char arr[], int size) {	//возвращает минимальное значение из массива
+	char tmp_min = arr[0];
+	for (int i = 0; i < size; i++) {
+		if (tmp_min > arr[i])tmp_min = arr[i];
+	}
+	return tmp_min;
+}
+long long int minValueIn(long long int arr[], int size) {	//возвращает минимальное значение из массива
+	long long int tmp_min = arr[0];
 	for (int i = 0; i < size; i++) {
 		if (tmp_min > arr[i])tmp_min = arr[i];
 	}
@@ -288,6 +403,20 @@ float maxValueIn(float arr[], int size) {	//возвращает максима�
 	}
 	return tmp_max;
 }
+char maxValueIn(char arr[], int size) {	//возвращает максимальное значение из массива
+	char tmp_max = arr[0];
+	for (int i = 0; i < size; i++) {
+		if (tmp_max < arr[i])tmp_max = arr[i];
+	}
+	return tmp_max;
+}
+long long int maxValueIn(long long int arr[], int size) {	//возвращает максимальное значение из массива
+	long long int tmp_max = arr[0];
+	for (int i = 0; i < size; i++) {
+		if (tmp_max < arr[i])tmp_max = arr[i];
+	}
+	return tmp_max;
+}
 void cout_arr(int arr[], int size, char ch) {
 	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
 }
@@ -298,6 +427,14 @@ void cout_arr(double arr[], int size, char ch) {
 void cout_arr(float arr[], int size, char ch) {
 	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
 }
+void cout_arr(char arr[], int size, char ch) {
+	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
+}
+void cout_arr(long long int arr[], int size, char ch) {
+	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
+}
+
+
 void Cikl_Left(int arr[], int size, int L) {
 	int l = 0;
 	for (int i = 0; i < L; i++) {
@@ -328,6 +465,28 @@ void Cikl_Left(float arr[], int size, int L) {
 		arr[size - 1] = l;
 	}
 }
+void Cikl_Left(char arr[], int size, int L) {
+	char l = 0;
+	for (int i = 0; i < L; i++) {
+		l = arr[0];
+		for (int j = 0; j < size - 1; j++) {
+			arr[j] = arr[j + 1];
+		}
+		arr[size - 1] = l;
+	}
+}
+void Cikl_Left(long long int arr[], int size, int L) {
+	long long int l = 0;
+	for (int i = 0; i < L; i++) {
+		l = arr[0];
+		for (int j = 0; j < size - 1; j++) {
+			arr[j] = arr[j + 1];
+		}
+		arr[size - 1] = l;
+	}
+}
+
+
 void Cikl_Right(int arr[], int size, int R) {
 	int r = 0;
 	for (int i = 0; i < R; i++) {
@@ -350,6 +509,26 @@ void Cikl_Right(double arr[], int size, int R) {
 }
 void Cikl_Right(float arr[], int size, int R) {
 	float r = 0;
+	for (int i = 0; i < R; i++) {
+		r = arr[size - 1];
+		for (int j = size - 1; j != 0; j--) {
+			arr[j] = arr[j - 1];
+		}
+		arr[0] = r;
+	}
+}
+void Cikl_Right(char arr[], int size, int R) {
+	char r = 0;
+	for (int i = 0; i < R; i++) {
+		r = arr[size - 1];
+		for (int j = size - 1; j != 0; j--) {
+			arr[j] = arr[j - 1];
+		}
+		arr[0] = r;
+	}
+}
+void Cikl_Right(long long int arr[], int size, int R) {
+	long long int r = 0;
 	for (int i = 0; i < R; i++) {
 		r = arr[size - 1];
 		for (int j = size - 1; j != 0; j--) {
@@ -387,6 +566,28 @@ void Sort(float arr[], int size) {	//Сортирует массив в поря
 		}
 	}
 }
+void Sort(char arr[], int size) {	//Сортирует массив в порядке возрастания
+	for (int i = 0; i < size; i++) {
+		char min = 0;
+		for (int j = i + 1; j < size; j++) {
+			if (arr[i] > arr[j]) {
+				min = arr[j]; arr[j] = arr[i]; arr[i] = min;
+			}
+		}
+	}
+}
+void Sort(long long int arr[], int size) {	//Сортирует массив в порядке возрастания
+	for (int i = 0; i < size; i++) {
+		long long int min = 0;
+		for (int j = i + 1; j < size; j++) {
+			if (arr[i] > arr[j]) {
+				min = arr[j]; arr[j] = arr[i]; arr[i] = min;
+			}
+		}
+	}
+}
+
+
 int compare(int arr[], const int size, int compared_value) {
 	int count = 0;
 	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
@@ -398,6 +599,16 @@ int compare(double arr[], const int size, double compared_value) {
 	return count;
 }
 int compare(float arr[], const int size, float compared_value) {
+	int count = 0;
+	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
+	return count;
+}
+int compare(char arr[], const int size, char compared_value) {
+	int count = 0;
+	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
+	return count;
+}
+int compare(long long int arr[], const int size, long long int compared_value) {
 	int count = 0;
 	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
 	return count;
