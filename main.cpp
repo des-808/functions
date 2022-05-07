@@ -31,72 +31,84 @@ void initRand(float arr[], const int size, int  max);
 void initRand(char arr[], const int size, int  max);
 void initRand(long long int arr[], const int size, int  max);
 void initRand(short arr[], const int size, int  max);
+
 void UniqueRand(int arr[], const int size, int  max);
 void UniqueRand(double arr[], const int size, int  max);
 void UniqueRand(float arr[], const int size, int  max);
 void UniqueRand(char arr[], const int size, int  max);
 void UniqueRand(long long int arr[], const int size, int  max);
 void UniqueRand(short arr[], const int size, int  max);
+
 int Sum(int arr[], int size);
 double Sum(double arr[], int size);
 float Sum(float arr[], int size);
 char Sum(char arr[], int size);
 long long int Sum(long long int arr[], int size);
 short Sum(short arr[], int size);
+
 int CountNonZeroElements(int arr[], const int size);
 int CountNonZeroElements(double arr[], const int size);
 int CountNonZeroElements(float arr[], const int size);
 int CountNonZeroElements(char arr[], const int size);
 int CountNonZeroElements(long long int arr[], const int size);
 int CountNonZeroElements(short arr[], const int size);
+
 double Avg(int arr[], int size);
 double Avg(double arr[], int size);
 double Avg(float arr[], int size);
 double Avg(char arr[], int size);
 double Avg(long long int arr[], int size);
 double Avg(short arr[], int size);
+
 double Avg_no_zero(int arr[], int size);
 double Avg_no_zero(double arr[], int size);
 double Avg_no_zero(float arr[], int size);
 double Avg_no_zero(char arr[], int size);
 double Avg_no_zero(long long int arr[], int size);
 double Avg_no_zero(short arr[], int size);
+
 int minValueIn(int arr[], int size);
 double minValueIn(double arr[], int size);
 float minValueIn(float arr[], int size);
 char minValueIn(char arr[], int size);
 long long int minValueIn(long long int arr[], int size);
 short minValueIn(short arr[], int size);
+
 int maxValueIn(int arr[], int size);
 double maxValueIn(double arr[], int size);
 float maxValueIn(float arr[], int size);
 char maxValueIn(char arr[], int size);
 long long int maxValueIn(long long int arr[], int size);
 short maxValueIn(short arr[], int size);
+
 void cout_arr(int arr[], int size, char ch);
 void cout_arr(double arr[], int size, char ch);
 void cout_arr(float arr[], int size, char ch);
 void cout_arr(char arr[], int size, char ch);
 void cout_arr(long long int arr[], int size, char ch);
 void cout_arr(short arr[], int size, char ch);
+
 void Cikl_Left(int arr[], int size, int L);
 void Cikl_Left(double arr[], int size, int L);
 void Cikl_Left(float arr[], int size, int L);
 void Cikl_Left(char arr[], int size, int L);
 void Cikl_Left(long long int arr[], int size, int L);
 void Cikl_Left(short arr[], int size, int L);
+
 void Cikl_Right(int arr[], int size, int R);
 void Cikl_Right(double arr[], int size, int R);
 void Cikl_Right(float arr[], int size, int R);
 void Cikl_Right(char arr[], int size, int R);
 void Cikl_Right(long long int arr[], int size, int R);
 void Cikl_Right(short arr[], int size, int R);
+
 void Sort(int arr[], int size);
 void Sort(double arr[], int size);
 void Sort(float arr[], int size);
 void Sort(char arr[], int size);
 void Sort(long long int arr[], int size);
 void Sort(short arr[], int size);
+
 int compare(int arr[], const int size, int compared_value);
 int compare(double arr[], const int size, double compared_value);
 int compare(float arr[], const int size, float compared_value);
@@ -116,9 +128,9 @@ int main() {
 
 	//int array [SIZE];
 	int tmp = 0;
-	srand(time(NULL));
-	//initRand(array, SIZE, 10000); 
-	UniqueRand(array, SIZE, 10000);
+	//srand(time(NULL));
+	initRand(array, SIZE, 10000); 
+	//UniqueRand(array, SIZE, 10000);
 	
 	cout << "В прямом порядке   :";
 	for (int i = 0; i < SIZE; i++) { cout << array[i] << probel; }cout << endl << endl;
@@ -189,7 +201,7 @@ void initRand(double arr[], const int size, int  max) {
 }
 void initRand(float arr[], const int size, int  max) {
 	for (int i = 0; i < size; i++) {
-		arr[i] = (float)(rand() % max)*10 / 1.1; ;
+		arr[i] = (float)(rand() % max)/100 ;
 	}
 }
 void initRand(char arr[], const int size, int  max) {
@@ -207,6 +219,7 @@ void initRand(short arr[], const int size, int  max) {
 		arr[i] = rand() % max;
 	}
 }
+
 void UniqueRand(int arr[], const int size, int  max){
 	int tmp = rand() % max;
 	for (int i = 0; i < size; i++) {
@@ -226,10 +239,10 @@ void UniqueRand(double arr[], const int size, int  max) {
 	}
 }
 void UniqueRand(float arr[], const int size, int  max) {
-	float tmp = ((rand() % max) * 100.5) / 10;//rand() % max;
+	float tmp = (float)(rand() % max) * 100.5 / 10;//rand() % max;
 	for (int i = 0; i < size; i++) {
 		for (int j = i; j >= 0; j--) {
-			if (tmp == arr[j]) { tmp = (rand() % max) * 10 / 1.1;; j = i; }
+			if (tmp == arr[j]) { tmp = (float)(rand() % max) * 10 / 1.1;; j = i; }
 		}
 		arr[i] = tmp;
 	}
@@ -304,6 +317,7 @@ short Sum(short arr[], int size) {	//возвращает сумму элеме�
 	}
 	return tmp;
 }
+
 int CountNonZeroElements(int arr[], const int size)
 {
 	int count = 0;
@@ -358,6 +372,7 @@ int CountNonZeroElements(short arr[], const int size)
 	}
 	return count;
 }
+
 double Avg(int arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / size;
 }
@@ -376,10 +391,10 @@ double Avg(long long int arr[], int size) {	//возвращает средне�
 double Avg(short arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / size;
 }
+
 double Avg_no_zero(int arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
 }
-
 double Avg_no_zero(double arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
 }
@@ -447,7 +462,6 @@ int maxValueIn(int arr[], int size) {	//возвращает максималь�
 	}
 	return tmp_max;
 }
-
 double maxValueIn(double arr[], int size) {	//возвращает максимальное значение из массива
 	double tmp_max = arr[0];
 	for (int i = 0; i < size; i++) {
