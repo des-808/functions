@@ -39,12 +39,13 @@ void UniqueRand(char arr[], const int size, int  max);
 void UniqueRand(long long arr[], const int size, int  max);
 void UniqueRand(short arr[], const int size, int  max);
 
-int Sum(int arr[], int size);
-double Sum(double arr[], int size);
-float Sum(float arr[], int size);
-char Sum(char arr[], int size);
-long long Sum(long long arr[], int size);
-short Sum(short arr[], int size);
+template<typename T>
+T Sum(T arr[], int size);
+//double Sum(double arr[], int size);
+//float Sum(float arr[], int size);
+//char Sum(char arr[], int size);
+//long long Sum(long long arr[], int size);
+//short Sum(short arr[], int size);
 
 int CountNonZeroElements(int arr[], const int size);
 int CountNonZeroElements(double arr[], const int size);
@@ -53,12 +54,8 @@ int CountNonZeroElements(char arr[], const int size);
 int CountNonZeroElements(long long arr[], const int size);
 int CountNonZeroElements(short arr[], const int size);
 
-double Avg(int arr[], int size);
-double Avg(double arr[], int size);
-double Avg(float arr[], int size);
-double Avg(char arr[], int size);
-double Avg(long long arr[], int size);
-double Avg(short arr[], int size);
+template<typename T>
+double Avg(T arr[], int size);
 
 double Avg_no_zero(int arr[], int size);
 double Avg_no_zero(double arr[], int size);
@@ -81,40 +78,11 @@ char maxValueIn(char arr[], int size);
 long long maxValueIn(long long arr[], int size);
 short maxValueIn(short arr[], int size);
 
-void cout_arr(int arr[], int size, char ch);
-void cout_arr(double arr[], int size, char ch);
-void cout_arr(float arr[], int size, char ch);
-void cout_arr(char arr[], int size, char ch);
-void cout_arr(long long arr[], int size, char ch);
-void cout_arr(short arr[], int size, char ch);
-
-void Cikl_Left(int arr[], int size, int L);
-void Cikl_Left(double arr[], int size, int L);
-void Cikl_Left(float arr[], int size, int L);
-void Cikl_Left(char arr[], int size, int L);
-void Cikl_Left(long long arr[], int size, int L);
-void Cikl_Left(short arr[], int size, int L);
-
-void Cikl_Right(int arr[], int size, int R);
-void Cikl_Right(double arr[], int size, int R);
-void Cikl_Right(float arr[], int size, int R);
-void Cikl_Right(char arr[], int size, int R);
-void Cikl_Right(long long arr[], int size, int R);
-void Cikl_Right(short arr[], int size, int R);
-
-void Sort(int arr[], int size);
-void Sort(double arr[], int size);
-void Sort(float arr[], int size);
-void Sort(char arr[], int size);
-void Sort(long long arr[], int size);
-void Sort(short arr[], int size);
-
-int compare(int arr[], const int size, int compared_value);
-int compare(double arr[], const int size, double compared_value);
-int compare(float arr[], const int size, float compared_value);
-int compare(char arr[], const int size, char compared_value);
-int compare(long long arr[], const int size, long long compared_value);
-int compare(short arr[], const int size, short compared_value);
+template<typename T>void cout_arr(T arr[], int size, char ch);
+template<typename T>void Cikl_Left(T arr[], int size, int L);
+template<typename T>void Cikl_Right(T arr[], int size, int R);
+template<typename T>void Sort(T arr[], int size);
+template<typename T>int compare(T arr[], const int size, T compared_value);
 
 int main() {
 	setlocale(LC_ALL, "Russian"); 
@@ -219,7 +187,7 @@ void initRand(short arr[], const int size, int  max) {
 		arr[i] = rand() % max;
 	}
 }
-
+template<typename T>
 void UniqueRand(int arr[], const int size, int  max){
 	int tmp = rand() % max;
 	for (int i = 0; i < size; i++) {
@@ -275,43 +243,9 @@ void UniqueRand(short arr[], const int size, int  max) {
 	}
 }
 
-int Sum(int arr[], int size) {	//возвращает сумму элементов массива
+template<typename T>
+T Sum(T arr[], int size) {	//возвращает сумму элементов массива
 	double tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
-}
-double Sum(double arr[], int size) {	//возвращает сумму элементов массива
-	double tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
-}
-float Sum(float arr[], int size) {	//возвращает сумму элементов массива
-	float tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
-}
-char Sum(char arr[], int size) {	//возвращает сумму элементов массива
-	char tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
-}
-long long Sum(long long arr[], int size) {	//возвращает сумму элементов массива
-	long long tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
-}
-short Sum(short arr[], int size) {	//возвращает сумму элементов массива
-	short tmp = 0;
 	for (int i = 0; i < size; i++) {
 		tmp += arr[i];
 	}
@@ -373,22 +307,8 @@ int CountNonZeroElements(short arr[], const int size)
 	return count;
 }
 
-double Avg(int arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (double)Sum(arr, size) / size;
-}
-double Avg(double arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (double)Sum(arr, size) / size;
-}
-double Avg(float arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (double)Sum(arr, size) / size;
-}
-double Avg(char arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (double)Sum(arr, size) / size;
-}
-double Avg(long long arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (double)Sum(arr, size) / size;
-}
-double Avg(short arr[], int size) {	//возвращает среднее арифметическое элементов массива
+template<typename T>
+double Avg(T arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / size;
 }
 
@@ -501,25 +421,14 @@ void cout_arr(int arr[], int size, char ch) {
 	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
 }
 
-void cout_arr(double arr[], int size, char ch) {
-	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
-}
-void cout_arr(float arr[], int size, char ch) {
-	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
-}
-void cout_arr(char arr[], int size, char ch) {
-	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
-}
-void cout_arr(long long arr[], int size, char ch) {
-	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
-}
-void cout_arr(short arr[], int size, char ch) {
+template<typename T>
+void cout_arr(T arr[], int size, char ch) {
 	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
 }
 
-
-void Cikl_Left(int arr[], int size, int L) {
-	int l = 0;
+template<typename T>
+void Cikl_Left(T arr[], int size, int L) {
+	T l = 0;
 	for (int i = 0; i < L; i++) {
 		l = arr[0];
 		for (int j = 0; j < size - 1; j++) { 
@@ -528,60 +437,10 @@ void Cikl_Left(int arr[], int size, int L) {
 		arr[size - 1] = l;
 	}
 }
-void Cikl_Left(double arr[], int size, int L) {
-	double l = 0;
-	for (int i = 0; i < L; i++) {
-		l = arr[0];
-		for (int j = 0; j < size - 1; j++) {
-			arr[j] = arr[j + 1];
-		}
-		arr[size - 1] = l;
-	}
-}
-void Cikl_Left(float arr[], int size, int L) {
-	float l = 0;
-	for (int i = 0; i < L; i++) {
-		l = arr[0];
-		for (int j = 0; j < size - 1; j++) {
-			arr[j] = arr[j + 1];
-		}
-		arr[size - 1] = l;
-	}
-}
-void Cikl_Left(char arr[], int size, int L) {
-	char l = 0;
-	for (int i = 0; i < L; i++) {
-		l = arr[0];
-		for (int j = 0; j < size - 1; j++) {
-			arr[j] = arr[j + 1];
-		}
-		arr[size - 1] = l;
-	}
-}
-void Cikl_Left(long long arr[], int size, int L) {
-	long long l = 0;
-	for (int i = 0; i < L; i++) {
-		l = arr[0];
-		for (int j = 0; j < size - 1; j++) {
-			arr[j] = arr[j + 1];
-		}
-		arr[size - 1] = l;
-	}
-}
-void Cikl_Left(short arr[], int size, int L) {
-	short l = 0;
-	for (int i = 0; i < L; i++) {
-		l = arr[0];
-		for (int j = 0; j < size - 1; j++) {
-			arr[j] = arr[j + 1];
-		}
-		arr[size - 1] = l;
-	}
-}
 
-
-void Cikl_Right(int arr[], int size, int R) {
-	int r = 0;
+template<typename T>
+void Cikl_Right(T arr[], int size, int R) {
+	T r = 0;
 	for (int i = 0; i < R; i++) {
 		r = arr[size - 1];
 		for (int j = size - 1; j != 0; j--) {
@@ -590,59 +449,11 @@ void Cikl_Right(int arr[], int size, int R) {
 		arr[0] = r;
 	}
 }
-void Cikl_Right(double arr[], int size, int R) {
-	double r = 0;
-	for (int i = 0; i < R; i++) {
-		r = arr[size - 1];
-		for (int j = size - 1; j != 0; j--) {
-			arr[j] = arr[j - 1];
-		}
-		arr[0] = r;
-	}
-}
-void Cikl_Right(float arr[], int size, int R) {
-	float r = 0;
-	for (int i = 0; i < R; i++) {
-		r = arr[size - 1];
-		for (int j = size - 1; j != 0; j--) {
-			arr[j] = arr[j - 1];
-		}
-		arr[0] = r;
-	}
-}
-void Cikl_Right(char arr[], int size, int R) {
-	char r = 0;
-	for (int i = 0; i < R; i++) {
-		r = arr[size - 1];
-		for (int j = size - 1; j != 0; j--) {
-			arr[j] = arr[j - 1];
-		}
-		arr[0] = r;
-	}
-}
-void Cikl_Right(long long arr[], int size, int R) {
-	long long r = 0;
-	for (int i = 0; i < R; i++) {
-		r = arr[size - 1];
-		for (int j = size - 1; j != 0; j--) {
-			arr[j] = arr[j - 1];
-		}
-		arr[0] = r;
-	}
-}
-void Cikl_Right(short arr[], int size, int R) {
-	short r = 0;
-	for (int i = 0; i < R; i++) {
-		r = arr[size - 1];
-		for (int j = size - 1; j != 0; j--) {
-			arr[j] = arr[j - 1];
-		}
-		arr[0] = r;
-	}
-}
 
-void Sort(int arr[], int size) {	//Сортирует массив в порядке возрастания
-	int min = 0;
+
+template<typename T>
+void Sort(T arr[], int size) {	//Сортирует массив в порядке возрастания
+	T min = 0;
 	for (int i = 0; i < size; i++) {
 		for (int j = i + 1; j < size; j++) {
 			if (arr[i] > arr[j]) {
@@ -651,81 +462,9 @@ void Sort(int arr[], int size) {	//Сортирует массив в поряд
 		}
 	}
 }
-void Sort(double arr[], int size) {	//Сортирует массив в порядке возрастания
-	for (int i = 0; i < size; i++) {
-		double min = 0.0;
-		for (int j = i + 1; j < size; j++) {
-			if (arr[i] > arr[j]) {min = arr[j];  arr[j] = arr[i]; arr[i] = min;
-			}
-		}
-	}
-}
-void Sort(float arr[], int size) {	//Сортирует массив в порядке возрастания
-	for (int i = 0; i < size; i++) {
-		float min = 0.0;
-		for (int j = i + 1; j < size; j++) {
-			if (arr[i] > arr[j]) {min = arr[j];arr[j] = arr[i];arr[i] = min;
-			}
-		}
-	}
-}
-void Sort(char arr[], int size) {	//Сортирует массив в порядке возрастания
-	for (int i = 0; i < size; i++) {
-		char min = 0;
-		for (int j = i + 1; j < size; j++) {
-			if (arr[i] > arr[j]) {
-				min = arr[j]; arr[j] = arr[i]; arr[i] = min;
-			}
-		}
-	}
-}
-void Sort(long long arr[], int size) {	//Сортирует массив в порядке возрастания
-	for (int i = 0; i < size; i++) {
-		long long min = 0;
-		for (int j = i + 1; j < size; j++) {
-			if (arr[i] > arr[j]) {
-				min = arr[j]; arr[j] = arr[i]; arr[i] = min;
-			}
-		}
-	}
-}
-void Sort(short arr[], int size) {	//Сортирует массив в порядке возрастания
-	for (int i = 0; i < size; i++) {
-		short min = 0;
-		for (int j = i + 1; j < size; j++) {
-			if (arr[i] > arr[j]) {
-				min = arr[j]; arr[j] = arr[i]; arr[i] = min;
-			}
-		}
-	}
-}
 
-int compare(int arr[], const int size, int compared_value) {
-	int count = 0;
-	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
-	return count;
-}
-int compare(double arr[], const int size, double compared_value) {
-	int count = 0;
-	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
-	return count;
-}
-int compare(float arr[], const int size, float compared_value) {
-	int count = 0;
-	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
-	return count;
-}
-int compare(char arr[], const int size, char compared_value) {
-	int count = 0;
-	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
-	return count;
-}
-int compare(long long arr[], const int size, long long compared_value) {
-	int count = 0;
-	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
-	return count;
-}
-int compare(short arr[], const int size, short compared_value) {
+template<typename T>
+int compare(T arr[], const int size, T compared_value) {
 	int count = 0;
 	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
 	return count;
