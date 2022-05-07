@@ -29,91 +29,91 @@ void initRand(int arr[], const int size, int  max);
 void initRand(double arr[], const int size, int  max);
 void initRand(float arr[], const int size, int  max);
 void initRand(char arr[], const int size, int  max);
-void initRand(long long int arr[], const int size, int  max);
+void initRand(long long arr[], const int size, int  max);
 void initRand(short arr[], const int size, int  max);
 
 void UniqueRand(int arr[], const int size, int  max);
 void UniqueRand(double arr[], const int size, int  max);
 void UniqueRand(float arr[], const int size, int  max);
 void UniqueRand(char arr[], const int size, int  max);
-void UniqueRand(long long int arr[], const int size, int  max);
+void UniqueRand(long long arr[], const int size, int  max);
 void UniqueRand(short arr[], const int size, int  max);
 
 int Sum(int arr[], int size);
 double Sum(double arr[], int size);
 float Sum(float arr[], int size);
 char Sum(char arr[], int size);
-long long int Sum(long long int arr[], int size);
+long long Sum(long long arr[], int size);
 short Sum(short arr[], int size);
 
 int CountNonZeroElements(int arr[], const int size);
 int CountNonZeroElements(double arr[], const int size);
 int CountNonZeroElements(float arr[], const int size);
 int CountNonZeroElements(char arr[], const int size);
-int CountNonZeroElements(long long int arr[], const int size);
+int CountNonZeroElements(long long arr[], const int size);
 int CountNonZeroElements(short arr[], const int size);
 
 double Avg(int arr[], int size);
 double Avg(double arr[], int size);
 double Avg(float arr[], int size);
 double Avg(char arr[], int size);
-double Avg(long long int arr[], int size);
+double Avg(long long arr[], int size);
 double Avg(short arr[], int size);
 
 double Avg_no_zero(int arr[], int size);
 double Avg_no_zero(double arr[], int size);
 double Avg_no_zero(float arr[], int size);
 double Avg_no_zero(char arr[], int size);
-double Avg_no_zero(long long int arr[], int size);
+double Avg_no_zero(long long arr[], int size);
 double Avg_no_zero(short arr[], int size);
 
 int minValueIn(int arr[], int size);
 double minValueIn(double arr[], int size);
 float minValueIn(float arr[], int size);
 char minValueIn(char arr[], int size);
-long long int minValueIn(long long int arr[], int size);
+long long minValueIn(long long arr[], int size);
 short minValueIn(short arr[], int size);
 
 int maxValueIn(int arr[], int size);
 double maxValueIn(double arr[], int size);
 float maxValueIn(float arr[], int size);
 char maxValueIn(char arr[], int size);
-long long int maxValueIn(long long int arr[], int size);
+long long maxValueIn(long long arr[], int size);
 short maxValueIn(short arr[], int size);
 
 void cout_arr(int arr[], int size, char ch);
 void cout_arr(double arr[], int size, char ch);
 void cout_arr(float arr[], int size, char ch);
 void cout_arr(char arr[], int size, char ch);
-void cout_arr(long long int arr[], int size, char ch);
+void cout_arr(long long arr[], int size, char ch);
 void cout_arr(short arr[], int size, char ch);
 
 void Cikl_Left(int arr[], int size, int L);
 void Cikl_Left(double arr[], int size, int L);
 void Cikl_Left(float arr[], int size, int L);
 void Cikl_Left(char arr[], int size, int L);
-void Cikl_Left(long long int arr[], int size, int L);
+void Cikl_Left(long long arr[], int size, int L);
 void Cikl_Left(short arr[], int size, int L);
 
 void Cikl_Right(int arr[], int size, int R);
 void Cikl_Right(double arr[], int size, int R);
 void Cikl_Right(float arr[], int size, int R);
 void Cikl_Right(char arr[], int size, int R);
-void Cikl_Right(long long int arr[], int size, int R);
+void Cikl_Right(long long arr[], int size, int R);
 void Cikl_Right(short arr[], int size, int R);
 
 void Sort(int arr[], int size);
 void Sort(double arr[], int size);
 void Sort(float arr[], int size);
 void Sort(char arr[], int size);
-void Sort(long long int arr[], int size);
+void Sort(long long arr[], int size);
 void Sort(short arr[], int size);
 
 int compare(int arr[], const int size, int compared_value);
 int compare(double arr[], const int size, double compared_value);
 int compare(float arr[], const int size, float compared_value);
 int compare(char arr[], const int size, char compared_value);
-int compare(long long int arr[], const int size, long long int compared_value);
+int compare(long long arr[], const int size, long long compared_value);
 int compare(short arr[], const int size, short compared_value);
 
 int main() {
@@ -121,9 +121,9 @@ int main() {
 	const int SIZE = 10;
 	//int* array = new  int[SIZE];
 	//double* array = new double[SIZE];
-	float* array = new float[SIZE];
+	//float* array = new float[SIZE];
 	//char* array = new char[SIZE];
-	//long long int* array = new long long int[SIZE];
+	long long* array = new long long[SIZE];
 	//short* array = new short[SIZE];
 
 	//int array [SIZE];
@@ -209,7 +209,7 @@ void initRand(char arr[], const int size, int  max) {
 		arr[i] = rand() % max;
 	}
 }
-void initRand(long long int arr[], const int size, int  max) {
+void initRand(long long arr[], const int size, int  max) {
 	for (int i = 0; i < size; i++) {
 		arr[i] = rand() % max;
 	}
@@ -256,8 +256,8 @@ void UniqueRand(char arr[], const int size, int  max) {
 		arr[i] = tmp;
 	}
 }
-void UniqueRand(long long int arr[], const int size, int  max) {
-	long long int tmp = rand() % max;//rand() % max;
+void UniqueRand(long long arr[], const int size, int  max) {
+	long long tmp = rand() % max;//rand() % max;
 	for (int i = 0; i < size; i++) {
 		for (int j = i; j >= 0; j--) {
 			if (tmp == arr[j]) { tmp = rand() % max; j = i; }
@@ -303,8 +303,8 @@ char Sum(char arr[], int size) {	//возвращает сумму элемен�
 	}
 	return tmp;
 }
-long long int Sum(long long int arr[], int size) {	//возвращает сумму элементов массива
-	long long int tmp = 0;
+long long Sum(long long arr[], int size) {	//возвращает сумму элементов массива
+	long long tmp = 0;
 	for (int i = 0; i < size; i++) {
 		tmp += arr[i];
 	}
@@ -354,7 +354,7 @@ int CountNonZeroElements(char arr[], const int size)
 	}
 	return count;
 }
-int CountNonZeroElements(long long int arr[], const int size)
+int CountNonZeroElements(long long arr[], const int size)
 {
 	int count = 0;
 	for (int i = 0; i < size; i++)
@@ -385,7 +385,7 @@ double Avg(float arr[], int size) {	//возвращает среднее ари
 double Avg(char arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / size;
 }
-double Avg(long long int arr[], int size) {	//возвращает среднее арифметическое элементов массива
+double Avg(long long arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / size;
 }
 double Avg(short arr[], int size) {	//возвращает среднее арифметическое элементов массива
@@ -404,7 +404,7 @@ double Avg_no_zero(float arr[], int size) {	//возвращает средне�
 double Avg_no_zero(char arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
 }
-double Avg_no_zero(long long int arr[], int size) {	//возвращает среднее арифметическое элементов массива
+double Avg_no_zero(long long arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
 }
 double Avg_no_zero(short arr[], int size) {	//возвращает среднее арифметическое элементов массива
@@ -440,8 +440,8 @@ char minValueIn(char arr[], int size) {	//возвращает минималь�
 	}
 	return tmp_min;
 }
-long long int minValueIn(long long int arr[], int size) {	//возвращает минимальное значение из массива
-	long long int tmp_min = arr[0];
+long long minValueIn(long long arr[], int size) {	//возвращает минимальное значение из массива
+	long long tmp_min = arr[0];
 	for (int i = 0; i < size; i++) {
 		if (tmp_min > arr[i])tmp_min = arr[i];
 	}
@@ -483,8 +483,8 @@ char maxValueIn(char arr[], int size) {	//возвращает максимал�
 	}
 	return tmp_max;
 }
-long long int maxValueIn(long long int arr[], int size) {	//возвращает максимальное значение из массива
-	long long int tmp_max = arr[0];
+long long maxValueIn(long long arr[], int size) {	//возвращает максимальное значение из массива
+	long long tmp_max = arr[0];
 	for (int i = 0; i < size; i++) {
 		if (tmp_max < arr[i])tmp_max = arr[i];
 	}
@@ -510,7 +510,7 @@ void cout_arr(float arr[], int size, char ch) {
 void cout_arr(char arr[], int size, char ch) {
 	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
 }
-void cout_arr(long long int arr[], int size, char ch) {
+void cout_arr(long long arr[], int size, char ch) {
 	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
 }
 void cout_arr(short arr[], int size, char ch) {
@@ -558,8 +558,8 @@ void Cikl_Left(char arr[], int size, int L) {
 		arr[size - 1] = l;
 	}
 }
-void Cikl_Left(long long int arr[], int size, int L) {
-	long long int l = 0;
+void Cikl_Left(long long arr[], int size, int L) {
+	long long l = 0;
 	for (int i = 0; i < L; i++) {
 		l = arr[0];
 		for (int j = 0; j < size - 1; j++) {
@@ -620,8 +620,8 @@ void Cikl_Right(char arr[], int size, int R) {
 		arr[0] = r;
 	}
 }
-void Cikl_Right(long long int arr[], int size, int R) {
-	long long int r = 0;
+void Cikl_Right(long long arr[], int size, int R) {
+	long long r = 0;
 	for (int i = 0; i < R; i++) {
 		r = arr[size - 1];
 		for (int j = size - 1; j != 0; j--) {
@@ -679,9 +679,9 @@ void Sort(char arr[], int size) {	//Сортирует массив в поря�
 		}
 	}
 }
-void Sort(long long int arr[], int size) {	//Сортирует массив в порядке возрастания
+void Sort(long long arr[], int size) {	//Сортирует массив в порядке возрастания
 	for (int i = 0; i < size; i++) {
-		long long int min = 0;
+		long long min = 0;
 		for (int j = i + 1; j < size; j++) {
 			if (arr[i] > arr[j]) {
 				min = arr[j]; arr[j] = arr[i]; arr[i] = min;
@@ -720,7 +720,7 @@ int compare(char arr[], const int size, char compared_value) {
 	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
 	return count;
 }
-int compare(long long int arr[], const int size, long long int compared_value) {
+int compare(long long arr[], const int size, long long compared_value) {
 	int count = 0;
 	for (int j = 0; j < size; j++) { if (compared_value == arr[j]) { count++; } } //{ if (arr[compared_value] == arr[j]) { count++; } }
 	return count;
