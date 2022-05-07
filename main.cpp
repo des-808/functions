@@ -172,10 +172,10 @@ int main() {
 
 		if (razr) {//Туут идёт подсчёт очередного в первый раз встретившегося значения
 			int count = compare(array, SIZE, array[i]);
-			//if (count > 1) {
+			if (count > 1) {
 				cout << "Значение " << setw(3) << array[i] << " Повторяется " << count << " Раз" << endl;
 				//printf("pначение %i встречается %i раз\n", array[i], count);
-			//}
+			}
 			razr = false;// блокируем эту часть кода
 		}
 	}
