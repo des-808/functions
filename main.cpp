@@ -1,61 +1,13 @@
-﻿#include<iostream>
-#include<cstring>
-#include<cstdio>
-#include<cctype>
-#include<locale>
-#include<windows.h>
-#include<fstream>
-#include<conio.h>
-#include<iomanip>
-#include<ctime>
-#include<stdlib.h>
-#include<cstdlib>
-//using namespace std;
-
-
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
-using std::ofstream;
-using std::ifstream;
-using std::_Iosb;
-using std::setw;
-
-
+﻿ #include"stdafx.h"
 const char probel = ' ';
 // прототип фунции нужен для того что бы имя функции и список её прин парам были известны на момент вызова
-void initRand(int arr[], const int size, int  max);
-void initRand(double arr[], const int size, int  max);
-void initRand(float arr[], const int size, int  max);
-void initRand(char arr[], const int size, int  max);
-void initRand(long long arr[], const int size, int  max);
-void initRand(short arr[], const int size, int  max);
-
-void UniqueRand(int arr[], const int size, int  max);
-void UniqueRand(double arr[], const int size, int  max);
-void UniqueRand(float arr[], const int size, int  max);
-void UniqueRand(char arr[], const int size, int  max);
-void UniqueRand(long long arr[], const int size, int  max);
-void UniqueRand(short arr[], const int size, int  max);
-
-template<typename T>	T Sum(T arr[], int size);
-template<typename T>	int CountNonZeroElements(T arr[], const int size);
-template<typename T>	double Avg(T arr[], int size);
-template<typename T>	double Avg_no_zero(T arr[], int size);
-template<typename T>	T minValueIn(T arr[], int size);
-template<typename T>	T maxValueIn(T arr[], int size);
-template<typename T>	void cout_arr(T arr[], int size, char ch);
-template<typename T>	void Cikl_Left(T arr[], int size, int L);
-template<typename T>	void Cikl_Right(T arr[], int size, int R);
-template<typename T>	void Sort(T arr[], int size);
-template<typename T>	int compare(T arr[], const int size, T compared_value);
+#include"func.h"
 
 int main() {
 	setlocale(LC_ALL, "Russian"); 
 	const int SIZE = 10;
-	//int* array = new  int[SIZE];
-	double* array = new double[SIZE];
+	int* array = new  int[SIZE];
+	//double* array = new double[SIZE];
 	//float* array = new float[SIZE];
 	//char* array = new char[SIZE];
 	//long long* array = new long long[SIZE];
@@ -122,21 +74,19 @@ int main() {
 
 
 
-
-
-
-void initRand(int arr[], const int size,  int  max) {
-	for (int i = 0; i < size; i++) { 
-		arr[i] = rand() % max; }
+void initRand(int arr[], const int size, int  max) {
+	for (int i = 0; i < size; i++) {
+		arr[i] = rand() % max;
+	}
 }
 void initRand(double arr[], const int size, int  max) {
-	for (int i = 0; i < size; i++) { 
-		arr[i] = (double)(rand() % max)/100; 
+	for (int i = 0; i < size; i++) {
+		arr[i] = (double)(rand() % max) / 100;
 	}
 }
 void initRand(float arr[], const int size, int  max) {
 	for (int i = 0; i < size; i++) {
-		arr[i] = (float)(rand() % max)/100 ;
+		arr[i] = (float)(rand() % max) / 100;
 	}
 }
 void initRand(char arr[], const int size, int  max) {
@@ -155,20 +105,20 @@ void initRand(short arr[], const int size, int  max) {
 	}
 }
 
-void UniqueRand(int arr[], const int size, int  max){
+void UniqueRand(int arr[], const int size, int  max) {
 	int tmp = rand() % max;
 	for (int i = 0; i < size; i++) {
 		for (int j = i; j >= 0; j--) {
 			if (tmp == arr[j]) { tmp = rand() % max; j = i; }
 		}
-			arr[i] = tmp;
+		arr[i] = tmp;
 	}
 }
 void UniqueRand(double arr[], const int size, int  max) {
 	double tmp = ((rand() % max) * 100.5) / 10;// rand() % max;
 	for (int i = 0; i < size; i++) {
 		for (int j = i; j >= 0; j--) {
-			if (tmp == arr[j]) { tmp = (double)(rand() % max)/100; j = i; }
+			if (tmp == arr[j]) { tmp = (double)(rand() % max) / 100; j = i; }
 		}
 		arr[i] = tmp;
 	}
@@ -270,9 +220,9 @@ void Cikl_Left(T arr[], int size, int L) {
 	T l = 0;
 	for (int i = 0; i < L; i++) {
 		l = arr[0];
-		for (int j = 0; j < size - 1; j++) { 
-			arr[j] = arr[j + 1]; 
-		} 
+		for (int j = 0; j < size - 1; j++) {
+			arr[j] = arr[j + 1];
+		}
 		arr[size - 1] = l;
 	}
 }
@@ -284,7 +234,7 @@ void Cikl_Right(T arr[], int size, int R) {
 		r = arr[size - 1];
 		for (int j = size - 1; j != 0; j--) {
 			arr[j] = arr[j - 1];
-		} 
+		}
 		arr[0] = r;
 	}
 }
