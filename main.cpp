@@ -44,8 +44,6 @@ int main() {
 	Sort(array, SIZE); cout_arr(array, SIZE, probel); cout << endl << endl;//Вывод массива на экран
 	///////////////////////////////////
 	
-
-	
 	cout << "Вывод повторяющихся значений в массиве" << endl;
 	bool razr = false;
 	for (int i = 0; i < SIZE; i++) {
@@ -56,7 +54,6 @@ int main() {
 			}
 			razr = true; //Совпадений нет даём добро на подсчёт очередного значения
 		}
-
 		if (razr) {//Туут идёт подсчёт очередного в первый раз встретившегося значения
 			int count = compare(array, SIZE, array[i]);
 			if (count > 1) {
