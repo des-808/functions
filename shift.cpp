@@ -1,4 +1,4 @@
-#include"stdafx.h"
+//#include"stdafx.h"
 
 
 void Cikl_Left(int arr[], int size, int L) {

@@ -2,7 +2,7 @@
 
 
 int Sum(int arr[], int size) {	//возвращает сумму элементов массива
-	double tmp = 0;
+	int tmp = 0;
 	for (int i = 0; i < size; i++) {
 		tmp += arr[i];
 	}

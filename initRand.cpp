@@ -49,10 +49,10 @@ void UniqueRand(double arr[], const int size, int  max) {
 	}
 }
 void UniqueRand(float arr[], const int size, int  max) {
-	float tmp = (float)(rand() % max) * 100.5 / 10;//rand() % max;
+	float tmp = float(rand() % max) * 100.5 / 10;//rand() % max;
 	for (int i = 0; i < size; i++) {
 		for (int j = i; j >= 0; j--) {
-			if (tmp == arr[j]) { tmp = (float)(rand() % max) * 10 / 1.1;; j = i; }
+			if (tmp == arr[j]) { tmp = float (rand() % max) * 10 / 1.1; j = i; }
 		}
 		arr[i] = tmp;
 	}
