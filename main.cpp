@@ -117,7 +117,7 @@ int main() {
 	//int array [SIZE];
 	int tmp = 0;
 	srand(time(NULL));
-	//initRand(array, SIZE, 10);
+	//initRand(array, SIZE, 10); 
 	UniqueRand(array, SIZE, 10);
 	
 	cout << "В прямом порядке   :";
