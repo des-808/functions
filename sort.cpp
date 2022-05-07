@@ -1,4 +1,4 @@
-#include"sort.h"
+#include"stdafx.h"
 
 
 void Sort(int arr[], int size) {	//Сортирует массив в порядке возрастания

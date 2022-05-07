@@ -118,9 +118,6 @@ double Avg(short arr[], int size) {	//возвращает среднее арифметическое элементо
 	return (double)Sum(arr, size) / size;
 }
 
-
-
-
 double Avg_no_zero(int arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
 }
@@ -139,7 +136,6 @@ double Avg_no_zero(long long arr[], int size) {	//возвращает среднее арифметичес
 double Avg_no_zero(short arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
 }
-
 
 int minValueIn(int arr[], int size) {	//возвращает минимальное значение из массива
 	int tmp_min = arr[0];
