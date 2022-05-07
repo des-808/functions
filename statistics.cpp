@@ -1,5 +1,49 @@
 #include"stdafx.h"
 
+
+int Sum(int arr[], int size) {	//возвращает сумму элементов массива
+	double tmp = 0;
+	for (int i = 0; i < size; i++) {
+		tmp += arr[i];
+	}
+	return tmp;
+}
+double Sum(double arr[], int size) {	//возвращает сумму элементов массива
+	double tmp = 0;
+	for (int i = 0; i < size; i++) {
+		tmp += arr[i];
+	}
+	return tmp;
+}
+float Sum(float arr[], int size) {	//возвращает сумму элементов массива
+	float tmp = 0;
+	for (int i = 0; i < size; i++) {
+		tmp += arr[i];
+	}
+	return tmp;
+}
+char Sum(char arr[], int size) {	//возвращает сумму элементов массива
+	char tmp = 0;
+	for (int i = 0; i < size; i++) {
+		tmp += arr[i];
+	}
+	return tmp;
+}
+long long Sum(long long arr[], int size) {	//возвращает сумму элементов массива
+	long long tmp = 0;
+	for (int i = 0; i < size; i++) {
+		tmp += arr[i];
+	}
+	return tmp;
+}
+short Sum(short arr[], int size) {	//возвращает сумму элементов массива
+	short tmp = 0;
+	for (int i = 0; i < size; i++) {
+		tmp += arr[i];
+	}
+	return tmp;
+}
+
 int CountNonZeroElements(int arr[], const int size)
 {
 	int count = 0;
@@ -53,48 +97,6 @@ int CountNonZeroElements(short arr[], const int size)
 		if (arr[i] != 0)count++;
 	}
 	return count;
-}
-int Sum(int arr[], int size) {	//возвращает сумму элементов массива
-	double tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
-}
-double Sum(double arr[], int size) {	//возвращает сумму элементов массива
-	double tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
-}
-float Sum(float arr[], int size) {	//возвращает сумму элементов массива
-	float tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
-}
-char Sum(char arr[], int size) {	//возвращает сумму элементов массива
-	char tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
-}
-long long Sum(long long arr[], int size) {	//возвращает сумму элементов массива
-	long long tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
-}
-short Sum(short arr[], int size) {	//возвращает сумму элементов массива
-	short tmp = 0;
-	for (int i = 0; i < size; i++) {
-		tmp += arr[i];
-	}
-	return tmp;
 }
 
 double Avg(int arr[], int size) {	//возвращает среднее арифметическое элементов массива

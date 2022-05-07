@@ -1,10 +1,5 @@
 #pragma once
-int CountNonZeroElements(int arr[], const int size);
-int CountNonZeroElements(double arr[], const int size);
-int CountNonZeroElements(float arr[], const int size);
-int CountNonZeroElements(char arr[], const int size);
-int CountNonZeroElements(long long arr[], const int size);
-int CountNonZeroElements(short arr[], const int size);
+
 
 int Sum(int arr[], int size);
 double Sum(double arr[], int size);
@@ -12,6 +7,16 @@ float Sum(float arr[], int size);
 char Sum(char arr[], int size);
 long long Sum(long long arr[], int size);
 short Sum(short arr[], int size);
+
+
+int CountNonZeroElements(int arr[], const int size);
+int CountNonZeroElements(double arr[], const int size);
+int CountNonZeroElements(float arr[], const int size);
+int CountNonZeroElements(char arr[], const int size);
+int CountNonZeroElements(long long arr[], const int size);
+int CountNonZeroElements(short arr[], const int size);
+
+
 
 double Avg(int arr[], int size);
 double Avg(double arr[], int size);
