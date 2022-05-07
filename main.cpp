@@ -4,7 +4,7 @@ const char probel = ' ';
 // прототип фунции нужен для того что бы имя функции и список её прин парам были известны на момент вызова
 #include "Header.h"
 
-#include "finctions.cpp"
+
 
 
 
@@ -80,7 +80,7 @@ int main() {
 
 
 
-
+#include "func.cpp"
 
 
 
