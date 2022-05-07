@@ -2,17 +2,9 @@
 
 const char probel = ' ';
 // прототип фунции нужен для того что бы имя функции и список её прин парам были известны на момент вызова
-#include "initRand.h"
-#include "statistics.h"
-#include "print.h"
-#include "shift.h"
-#include "sort.h"
+#include "Header.h"
 
-#include "initRand.cpp"
-#include "statistics.cpp"
-#include "print.cpp"
-#include "shift.cpp"
-#include "sort.cpp"
+#include "finctions.cpp"
 
 
 
