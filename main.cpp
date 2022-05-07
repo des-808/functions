@@ -2,11 +2,11 @@
 
 const char probel = ' ';
 // прототип фунции нужен для того что бы имя функции и список её прин парам были известны на момент вызова
-#include "Header.h"
-
-
-
-
+#include "initArr.h"
+#include "statistics.h"
+#include "print.h"
+#include "shift.h"
+#include "sort.h"
 
 int main() {
 	setlocale(LC_ALL, "Russian"); 
@@ -76,14 +76,5 @@ int main() {
 
 	system("pause");
 }
-
-
-
-
-
-
-
-
-
 
 

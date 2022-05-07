@@ -38,7 +38,19 @@
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="statistics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="initArr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="print.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shift.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

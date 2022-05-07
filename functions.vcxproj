@@ -147,7 +147,11 @@
     <ClCompile Include="statistics.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="statistics.h" />
+    <ClInclude Include="initArr.h" />
+    <ClInclude Include="print.h" />
+    <ClInclude Include="shift.h" />
+    <ClInclude Include="sort.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

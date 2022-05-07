@@ -1,5 +1,4 @@
 #include"stdafx.h"
-#include"Header.h"
 void initRand(int arr[], const int size, int  max) {
 	for (int i = 0; i < size; i++) {
 		arr[i] = rand() % max;
