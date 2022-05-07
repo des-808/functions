@@ -107,9 +107,9 @@ int compare(short arr[], const int size, short compared_value);
 int main() {
 	setlocale(LC_ALL, "Russian"); 
 	const int SIZE = 10;
-	int* array = new  int[SIZE];
+	//int* array = new  int[SIZE];
 	//double* array = new double[SIZE];
-	//float* array = new float[SIZE];
+	float* array = new float[SIZE];
 	//char* array = new char[SIZE];
 	//long long int* array = new long long int[SIZE];
 	//short* array = new short[SIZE];
@@ -117,8 +117,8 @@ int main() {
 	//int array [SIZE];
 	int tmp = 0;
 	srand(time(NULL));
-	//initRand(array, SIZE, 10); 
-	UniqueRand(array, SIZE, 10);
+	//initRand(array, SIZE, 10000); 
+	UniqueRand(array, SIZE, 10000);
 	
 	cout << "В прямом порядке   :";
 	for (int i = 0; i < SIZE; i++) { cout << array[i] << probel; }cout << endl << endl;
@@ -184,12 +184,12 @@ void initRand(int arr[], const int size,  int  max) {
 }
 void initRand(double arr[], const int size, int  max) {
 	for (int i = 0; i < size; i++) { 
-		arr[i] = ((rand() % max)*100.5)/10; 
+		arr[i] = (double)(rand() % max)/100; 
 	}
 }
 void initRand(float arr[], const int size, int  max) {
 	for (int i = 0; i < size; i++) {
-		arr[i] = ((rand() % max) * 100.5) / 10;
+		arr[i] = (float)(rand() % max)*10 / 1.1; ;
 	}
 }
 void initRand(char arr[], const int size, int  max) {
@@ -220,7 +220,7 @@ void UniqueRand(double arr[], const int size, int  max) {
 	double tmp = ((rand() % max) * 100.5) / 10;// rand() % max;
 	for (int i = 0; i < size; i++) {
 		for (int j = i; j >= 0; j--) {
-			if (tmp == arr[j]) { tmp = rand() % max; j = i; }
+			if (tmp == arr[j]) { tmp = (double)(rand() % max)/100; j = i; }
 		}
 		arr[i] = tmp;
 	}
@@ -229,7 +229,7 @@ void UniqueRand(float arr[], const int size, int  max) {
 	float tmp = ((rand() % max) * 100.5) / 10;//rand() % max;
 	for (int i = 0; i < size; i++) {
 		for (int j = i; j >= 0; j--) {
-			if (tmp == arr[j]) { tmp = ((rand() % max) * 100.5) / 10; j = i; }
+			if (tmp == arr[j]) { tmp = (rand() % max) * 10 / 1.1;; j = i; }
 		}
 		arr[i] = tmp;
 	}
