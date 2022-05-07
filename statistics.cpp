@@ -1,5 +1,59 @@
 #include"stdafx.h"
 
+int CountNonZeroElements(int arr[], const int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] != 0)count++;
+	}
+	return count;
+}
+int CountNonZeroElements(double arr[], const int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] != 0)count++;
+	}
+	return count;
+}
+int CountNonZeroElements(float arr[], const int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] != 0)count++;
+	}
+	return count;
+}
+int CountNonZeroElements(char arr[], const int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] != 0)count++;
+	}
+	return count;
+}
+int CountNonZeroElements(long long arr[], const int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] != 0)count++;
+	}
+	return count;
+}
+int CountNonZeroElements(short arr[], const int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] != 0)count++;
+	}
+	return count;
+}
 int Sum(int arr[], int size) {	//возвращает сумму элементов массива
 	double tmp = 0;
 	for (int i = 0; i < size; i++) {
@@ -62,60 +116,7 @@ double Avg(short arr[], int size) {	//возвращает среднее арифметическое элементо
 	return (double)Sum(arr, size) / size;
 }
 
-int CountNonZeroElements(int arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
-int CountNonZeroElements(double arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
-int CountNonZeroElements(float arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
-int CountNonZeroElements(char arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
-int CountNonZeroElements(long long arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
-int CountNonZeroElements(short arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
+
 
 
 double Avg_no_zero(int arr[], int size) {	//возвращает среднее арифметическое элементов массива

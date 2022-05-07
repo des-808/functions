@@ -15,6 +15,7 @@ const char probel = ' ';
 #include "sort.cpp"
 
 
+
 int main() {
 	setlocale(LC_ALL, "Russian"); 
 	const int SIZE = 10;
@@ -83,7 +84,6 @@ int main() {
 
 	system("pause");
 }
-
 
 
 
