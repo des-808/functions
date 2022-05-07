@@ -80,7 +80,8 @@ int main() {
 
 
 
-#include "func.cpp"
+
+
 
 
 
