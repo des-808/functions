@@ -39,59 +39,26 @@ void UniqueRand(char arr[], const int size, int  max);
 void UniqueRand(long long arr[], const int size, int  max);
 void UniqueRand(short arr[], const int size, int  max);
 
-template<typename T>
-T Sum(T arr[], int size);
-//double Sum(double arr[], int size);
-//float Sum(float arr[], int size);
-//char Sum(char arr[], int size);
-//long long Sum(long long arr[], int size);
-//short Sum(short arr[], int size);
-
-int CountNonZeroElements(int arr[], const int size);
-int CountNonZeroElements(double arr[], const int size);
-int CountNonZeroElements(float arr[], const int size);
-int CountNonZeroElements(char arr[], const int size);
-int CountNonZeroElements(long long arr[], const int size);
-int CountNonZeroElements(short arr[], const int size);
-
-template<typename T>
-double Avg(T arr[], int size);
-
-double Avg_no_zero(int arr[], int size);
-double Avg_no_zero(double arr[], int size);
-double Avg_no_zero(float arr[], int size);
-double Avg_no_zero(char arr[], int size);
-double Avg_no_zero(long long arr[], int size);
-double Avg_no_zero(short arr[], int size);
-
-int minValueIn(int arr[], int size);
-double minValueIn(double arr[], int size);
-float minValueIn(float arr[], int size);
-char minValueIn(char arr[], int size);
-long long minValueIn(long long arr[], int size);
-short minValueIn(short arr[], int size);
-
-int maxValueIn(int arr[], int size);
-double maxValueIn(double arr[], int size);
-float maxValueIn(float arr[], int size);
-char maxValueIn(char arr[], int size);
-long long maxValueIn(long long arr[], int size);
-short maxValueIn(short arr[], int size);
-
-template<typename T>void cout_arr(T arr[], int size, char ch);
-template<typename T>void Cikl_Left(T arr[], int size, int L);
-template<typename T>void Cikl_Right(T arr[], int size, int R);
-template<typename T>void Sort(T arr[], int size);
-template<typename T>int compare(T arr[], const int size, T compared_value);
+template<typename T>	T Sum(T arr[], int size);
+template<typename T>	int CountNonZeroElements(T arr[], const int size);
+template<typename T>	double Avg(T arr[], int size);
+template<typename T>	double Avg_no_zero(T arr[], int size);
+template<typename T>	T minValueIn(T arr[], int size);
+template<typename T>	T maxValueIn(T arr[], int size);
+template<typename T>	void cout_arr(T arr[], int size, char ch);
+template<typename T>	void Cikl_Left(T arr[], int size, int L);
+template<typename T>	void Cikl_Right(T arr[], int size, int R);
+template<typename T>	void Sort(T arr[], int size);
+template<typename T>	int compare(T arr[], const int size, T compared_value);
 
 int main() {
 	setlocale(LC_ALL, "Russian"); 
 	const int SIZE = 10;
 	//int* array = new  int[SIZE];
-	//double* array = new double[SIZE];
+	double* array = new double[SIZE];
 	//float* array = new float[SIZE];
 	//char* array = new char[SIZE];
-	long long* array = new long long[SIZE];
+	//long long* array = new long long[SIZE];
 	//short* array = new short[SIZE];
 
 	//int array [SIZE];
@@ -187,7 +154,7 @@ void initRand(short arr[], const int size, int  max) {
 		arr[i] = rand() % max;
 	}
 }
-template<typename T>
+
 void UniqueRand(int arr[], const int size, int  max){
 	int tmp = rand() % max;
 	for (int i = 0; i < size; i++) {
@@ -252,52 +219,8 @@ T Sum(T arr[], int size) {	//возвращает сумму элементов 
 	return tmp;
 }
 
-int CountNonZeroElements(int arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
-int CountNonZeroElements(double arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
-int CountNonZeroElements(float arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
-int CountNonZeroElements(char arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
-int CountNonZeroElements(long long arr[], const int size)
-{
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (arr[i] != 0)count++;
-	}
-	return count;
-}
-int CountNonZeroElements(short arr[], const int size)
+template<typename T>
+int CountNonZeroElements(T arr[], const int size)
 {
 	int count = 0;
 	for (int i = 0; i < size; i++)
@@ -312,114 +235,30 @@ double Avg(T arr[], int size) {	//возвращает среднее арифм
 	return (double)Sum(arr, size) / size;
 }
 
-double Avg_no_zero(int arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
-}
-double Avg_no_zero(double arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
-}
-double Avg_no_zero(float arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
-}
-double Avg_no_zero(char arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
-}
-double Avg_no_zero(long long arr[], int size) {	//возвращает среднее арифметическое элементов массива
-	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
-}
-double Avg_no_zero(short arr[], int size) {	//возвращает среднее арифметическое элементов массива
+template<typename T>
+double Avg_no_zero(T arr[], int size) {	//возвращает среднее арифметическое элементов массива
 	return (double)Sum(arr, size) / CountNonZeroElements(arr, size);
 }
 
-
-int minValueIn(int arr[], int size) {	//возвращает минимальное значение из массива
-	int tmp_min = arr[0];
-	for (int i = 0; i < size; i++) {
-		if (tmp_min > arr[i])tmp_min = arr[i];
-	}
-	return tmp_min;
-}
-double minValueIn(double arr[], int size) {	//возвращает минимальное значение из массива
-	double tmp_min = arr[0];
-	for (int i = 0; i < size; i++) {
-		if (tmp_min > arr[i])tmp_min = arr[i];
-	}
-	return tmp_min;
-}
-float minValueIn(float arr[], int size) {	//возвращает минимальное значение из массива
-	float tmp_min = arr[0];
-	for (int i = 0; i < size; i++) {
-		if (tmp_min > arr[i])tmp_min = arr[i];
-	}
-	return tmp_min;
-}
-char minValueIn(char arr[], int size) {	//возвращает минимальное значение из массива
-	char tmp_min = arr[0];
-	for (int i = 0; i < size; i++) {
-		if (tmp_min > arr[i])tmp_min = arr[i];
-	}
-	return tmp_min;
-}
-long long minValueIn(long long arr[], int size) {	//возвращает минимальное значение из массива
-	long long tmp_min = arr[0];
-	for (int i = 0; i < size; i++) {
-		if (tmp_min > arr[i])tmp_min = arr[i];
-	}
-	return tmp_min;
-}
-short minValueIn(short arr[], int size) {	//возвращает минимальное значение из массива
-	short tmp_min = arr[0];
+template<typename T>
+T minValueIn(T arr[], int size) {	//возвращает минимальное значение из массива
+	T tmp_min = arr[0];
 	for (int i = 0; i < size; i++) {
 		if (tmp_min > arr[i])tmp_min = arr[i];
 	}
 	return tmp_min;
 }
 
-int maxValueIn(int arr[], int size) {	//возвращает максимальное значение из массива
-	int tmp_max = arr[0];
+template<typename T>
+T maxValueIn(T arr[], int size) {	//возвращает максимальное значение из массива
+	T tmp_max = arr[0];
 	for (int i = 0; i < size; i++) {
 		if (tmp_max < arr[i])tmp_max = arr[i];
 	}
 	return tmp_max;
 }
-double maxValueIn(double arr[], int size) {	//возвращает максимальное значение из массива
-	double tmp_max = arr[0];
-	for (int i = 0; i < size; i++) {
-		if (tmp_max < arr[i])tmp_max = arr[i];
-	}
-	return tmp_max;
-}
-float maxValueIn(float arr[], int size) {	//возвращает максимальное значение из массива
-	float tmp_max = arr[0];
-	for (int i = 0; i < size; i++) {
-		if (tmp_max < arr[i])tmp_max = arr[i];
-	}
-	return tmp_max;
-}
-char maxValueIn(char arr[], int size) {	//возвращает максимальное значение из массива
-	char tmp_max = arr[0];
-	for (int i = 0; i < size; i++) {
-		if (tmp_max < arr[i])tmp_max = arr[i];
-	}
-	return tmp_max;
-}
-long long maxValueIn(long long arr[], int size) {	//возвращает максимальное значение из массива
-	long long tmp_max = arr[0];
-	for (int i = 0; i < size; i++) {
-		if (tmp_max < arr[i])tmp_max = arr[i];
-	}
-	return tmp_max;
-}
-short maxValueIn(short arr[], int size) {	//возвращает максимальное значение из массива
-	short tmp_max = arr[0];
-	for (int i = 0; i < size; i++) {
-		if (tmp_max < arr[i])tmp_max = arr[i];
-	}
-	return tmp_max;
-}
-void cout_arr(int arr[], int size, char ch) {
-	for (int i = 0; i < size; i++) { cout << arr[i] << ch; }
-}
+
+
 
 template<typename T>
 void cout_arr(T arr[], int size, char ch) {
